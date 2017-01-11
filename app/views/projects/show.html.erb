@@ -1,0 +1,32 @@
+<h1> Project </h1>
+
+<div>
+  <h4> <%= @users.first_name %></h4>
+  <h4><%= @users.last_name%> </h4>
+</div>
+
+<div>
+  <h4>User ID: <%=  @projects.user_id %></h4>
+  <h4>Project Name: <%=  @projects.name %></h4>
+</div>
+
+
+<div>
+  <h4>Project id: <%= @projects.id %></h4>
+</div>
+
+
+
+
+
+<div>
+  <%= link_to "Edit Project", "/projects/#{@projects.id}/edit" %>
+</div>
+
+<div>
+  <%= link_to "Delete Project", "/projects/#{@projects.id}", method: :delete %>
+</div>
+
+
+
+

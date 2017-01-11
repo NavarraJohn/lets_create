@@ -1,0 +1,25 @@
+<h1>Create New Project</h1>
+
+<%= form_tag "/projects", method: :post do %>
+  <div>
+    <%= label_tag :name, "Project Name:" %>
+    <%= text_field_tag :name %>
+
+  </div>
+    <%= label_tag :url, "Image Url:" %>
+    <%= text_field_tag :url %>
+  <div>  
+  <%= label_tag :description, " Description:" %>
+    <%= text_field_tag :description %>
+  </div>
+  <div>  
+  <%= label_tag :step_number, "Step Number:" %>
+    <%= text_field_tag :step_number %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Lets Create Project" %>
+  </div>
+<% end %>
+

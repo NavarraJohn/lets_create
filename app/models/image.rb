@@ -11,5 +11,5 @@
 
 class Image < ApplicationRecord
 
-  belongs_to :project
+  belongs_to :instruction
 end

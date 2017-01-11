@@ -5,10 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-100.times do
-  
-  
-  Follower.create(user_id: rand(100), follower_id: rand(100))
 
+192.times do 
+  image = Image.new(instruction_id: rand(1..192))
+  image.save
 end
-

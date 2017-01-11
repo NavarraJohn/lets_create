@@ -1,0 +1,14 @@
+<h1>Edit Project: <%= @projects.name %></h1>
+
+<%= form_tag "/projects/#{@projects.id}", method: :patch do %>
+  <div>
+    <%= label_tag :name, "Project Name:" %>
+    <%= text_field_tag :name, @projects.name %>
+  </div>
+
+ 
+
+  <div>
+    <%= submit_tag "Save!" %>
+  </div>
+<% end %>

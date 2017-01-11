@@ -1,0 +1,28 @@
+<h1> LETS CREATE </h1>
+<h2> All Projects </h2>
+  <div>
+    Logged in:
+    <%= @current_user.first_name %>
+    <%= @current_user.last_name %>
+  </div>
+
+<%= form_tag "/search", method: :post do %>
+  <%= label_tag :search %>
+  <%= text_field_tag :search %>
+  <%= submit_tag "Search" %>
+<% end %>
+ 
+
+  
+
+  <% @projects.each do |project| %>
+  <div class="col-sm-4">
+  <div class="well">
+    <h2><%= link_to project.name, "/projects/#{project.id}" %></h2>
+  </div>
+  <% end %>
+
+
+
+  
+
