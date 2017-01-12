@@ -118,17 +118,80 @@
 
 		<!-- Main Content -->
 		<div class="content-wrapper">
-			<!-- Error Section -->
-			<section class="section error-section">
+			<!-- Contact Section -->
+			<section class="section section-contact">
 				<div class="container">
-					<div class="section-header big">
-						<p>Oops, Page Not Found!</p>
-						<h2>Error 404</h2>
-						<p class="bottom">The page you are looking for does not exist. Please enter a valid URL or return home</p>
+					<div class="section-header">
+						<p>Contact page</p>
+						<h2>Contact info</h2>
+						<p class="bottom">Map</p>
 					</div>
 
-					<div class="btn-wrapper">
-						<a href="index.html" class="btn template-btn-2">Go home</a>
+					<div class="map-canvas" id="map-canvas"></div>
+
+					<form class="contact-form style-2">
+						<div class="row">
+							<div class="col-sm-12">
+								<label class="form-input-box">
+									<input type="text" class="form-input check-value" name="contact-name" />
+									<span class="label" data-name="Name"></span>
+								</label>
+							</div>
+
+							<div class="col-sm-12">
+								<label class="form-input-box">
+									<input type="text" class="form-input check-value" name="contact-email" />
+									<span class="label" data-name="E-mail"></span>
+								</label>
+							</div>
+						</div>
+
+						<label class="form-input-box">
+							<textarea class="form-input check-value" name="contact-message"></textarea>
+							<span class="label" data-name="Message"></span>
+						</label>
+
+						<button class="btn template-btn-2">Write</button>
+					</form>
+				</div>
+
+				<div class="contact-info-box">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-8 col-md-5">
+								<div class="info-box">
+									<h4 class="caption">Address</h4>
+									<p>52 street ny 2200<br />California USA</p>
+								</div>
+							</div>
+
+							<div class="col-sm-8 col-md-5">
+								<div class="info-box">
+									<h4 class="caption">Phone</h4>
+									<p>(012) 788 989 777 000<br />(012) 888 784 558 456</p>
+								</div>
+							</div>
+
+							<div class="col-sm-8 col-md-5">
+								<div class="info-box">
+									<h4 class="caption">Mail</h4>
+									<p><a href="#">epilog@gmail.com</a><br /><a href="#">epilogmail@gmail.com</a></p>
+								</div>
+							</div>
+
+							<div class="col-md-9 col-xs-24">
+								<div class="info-box large">
+									<img src="img/brand.png" alt="large brand" />
+
+									<div class="subscribe-form-wrapper simple">
+										<form class="subscribe-form">
+											<input type="text" class="form-input" placeholder="Newsletter subscribe" />
+											<button class="form-submit"><i class="icon-arrow-right2"></i></button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -204,5 +267,4 @@
 	<script src="js/imagesloaded.js"></script>
 	<script src="js/isotope.js"></script>
 	<script src="js/options.js"></script>
-</body>
 </html>
