@@ -1,18 +1,20 @@
-<h1> Project </h1>
-<div>
-  <h4> <%= @users.first_name %></h4>
-  <h4><%= @users.last_name%> </h4>
-</div>
+
 
 <div>
-  <h4>User ID: <%=  @projects.user_id %></h4>
-  <h4>Project Name: <%=  @projects.name %></h4>
+  <h2>Project Name: <%=  @projects.name%></h>
 </div>
 
 
 <div>
-  <h4>Project id: <%= @projects.id %></h4>
+  <h4><img src= "<%= @projects.project_images.first.url %>" /></h4>
 </div>
+
+<div>
+  <h4>Description: <% %><%= @instructions.description %></h4>
+</div>
+
+ 
+
 
 
 

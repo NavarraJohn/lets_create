@@ -2,18 +2,26 @@ class ProjectsController < ApplicationController
 
   before_action :authenticate_user!
 
+  def home
+    @project1 = Project.find_by(id: 1)
+    @project2 = Project.find_by(id: 2)
+    @project3 = Project.find_by(id: 4)
+  end
+
   def index
-    @projects = Project.all  
-    
-    
+    @projects = Project.all
+    @project_images = ProjectImage.all
 
   end  
 
   def show
+
     @projects = Project.find_by(id: params[:id])
     @images = Image.find_by(id: params[:id])
     @instructions = Instruction.find_by(id: params[:id])
     @users = User.find_by(id: params[:id])
+
+
   end  
 
   def search

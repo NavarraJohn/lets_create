@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <yield>
   <meta charset="utf-8" />
-    <title>Let's Create</title>
+    <title>Epilog</title>
     <meta name="description" content="Here goes description" />
     <meta name="author" content="author name" />
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
@@ -18,17 +17,21 @@
     <link rel="stylesheet" href="/css/icomoon.css" />
     <link rel="stylesheet" href="/css/owl.css" />
     <link rel="stylesheet" href="/css/screen.css" />
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
-</yield>
-
-
 <body id="front-page">
   <!-- Page Wrapper -->
   <div id="page">
+
     <!-- Header -->
     <header class="style-2">
+
+    <!-- Logo starts here -->
       <div class="white-large-container">
-        <a class="brand" href="/projects">
+        <a class="brand" href="/">
           <svg viewBox="0 0 57 38" enable-background="new 0 0 57 38" xml:space="preserve">
           <path id="path-1" d="M55.668,32.639v2.868c-0.792,0.872-1.924,1.308-3.396,1.308c-1.24,0-2.278-0.408-3.114-1.224
             c-0.836-0.816-1.254-1.848-1.254-3.096c0-1.248,0.426-2.288,1.278-3.12c0.852-0.832,1.882-1.248,3.09-1.248s2.212,0.352,3.012,1.056
@@ -51,50 +54,38 @@
           </svg>
 
         </a>
-      </div>
+      </div><!-- Logo ends here -->
+
       <div class="large-container">
         <div class="row">
           <div class="col-xs-24">
             <span class="mobile-nav-toggle no-select"></span>
             <nav>
-
               <ul>
+
                 <li class="current-menu-item">
-                  <a href="#"> Home </a>
+                  <a href="/">Home</a>
+                </li>
+
+                <li>
+                  <a href="/categories">Categories</a>
                   <ul>
-                    <li>
-                      <a href="standard-blog.html">Profile</a>
-                      
-                    </li>
-                    <li>
-                      <a href="list-blog.html">My Projects</a>
-                      
-                    </li>
-                    
-                    
+                    <li><a href="categories-grid.html">Category 1</a></li>
+                    <li><a href="categories-list.html">Category 2</a></li>
+                    <li><a href="categories-list.html">etc</a></li>
                   </ul>
                 </li>
+
+                <li><a href="/projects/new">Let's Create</a></li>
+
                 <li>
-                  <a href="#">Let's Create a Project</a>
+                  <a href="#">You</a>
                   <ul>
-                    <li><a href="categories-grid.html">New Project</a></li>
-                    <li><a href="categories-list.html">Edit Project</a></li>
-                    <li><a href="categories-list.html">Delete Project</a></li>
-                  </ul>
-                </li>
-                
-                <li>
-                  <a href="#">Friends</a>
-                  <ul>
-                    
-                    <li><a href="categories-grid.html">Friends List</a></li>
-                    <li><a href="categories-grid.html">Following</a></li>
-                    <li><a href="categories-grid.html">Followers</a></li>
+                    <li><a href="404.html">My Profile</a></li>
+                    <li><a href="contact.html">My Projects</a></li>
                   </ul>
                 </li>
               </ul>
-            
-
             </nav>
 
             <form class="global-search-form">
@@ -109,54 +100,8 @@
       </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="content-wrapper">
+      <%= yield %>
 
-      <!-- Main Slider -->
-      <div class="main-slider">
-        <ul class="items clean-list">
-          <li class="item gallery-cell">
-            <img width="840" height="542" src="https://s-media-cache-ak0.pinimg.com/564x/cb/dd/4f/cbdd4f122ec546116914eadff9f8d169.jpg" alt="slider item cover" />
-            <div class="slide-components">
-              <h3 class="title slide-component first-row"><a href="blog-post.html">DIY DOG CLOTHES</a></h3>
-              <hr class="slide-component second-row" />
-              <a href="blog-post.html" class="link slide-component third-row">Read more</a>
-            </div>
-          </li>
-
-          <li class="item gallery-cell">
-            <img width="840" height="542" src="http://industrystandarddesign.com/wp-content/uploads/2016/04/wood-plank-accent-wall.jpg" alt="slider item cover" />
-            <div class="slide-components">
-              <h3 class="title slide-component first-row"><a href="blog-post.html">
-              <% @projects.each do |project|%>  
-              <%= project.name %></a></h3>
-              <% end %>
-              <hr class="slide-component second-row" />
-              <a href="blog-post.html" class="link slide-component third-row">Read more</a>
-            </div>
-          </li>
-
-          <li class="item gallery-cell">
-            <img width="840" height="542" src="https://s-media-cache-ak0.pinimg.com/564x/52/5e/64/525e64e61d06d615917d942f75b88858.jpg" alt="slider item cover" />
-            <div class="slide-components">
-              <h3 class="title slide-component first-row"><a href="blog-post.html">Mauris massa metus, fermentum</a></h3>
-              <hr class="slide-component second-row" />
-              <a href="blog-post.html" class="link slide-component third-row">Read more</a>
-            </div>
-          </li>
-
-          <li class="item gallery-cell">
-            <img width="840" height="542" src="https://s-media-cache-ak0.pinimg.com/564x/51/1b/a1/511ba1766cd6da4345d1f8f141346c32.jpg" alt="slider item cover" />
-            <div class="slide-components">
-              <h3 class="title slide-component first-row"><a href="blog-post.html">Mauris massa metus, fermentum</a></h3>
-              <hr class="slide-component second-row" />
-              <a href="blog-post.html" class="link slide-component third-row">Read more</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Categories Promo -->
       <div class="categories-promo">
         <div class="container">
           <div class="row">
@@ -168,7 +113,7 @@
 
             <div class="col-sm-8">
               <div class="promo-box instagram">
-                <a href="https://www.instagram.com/letscreate121/" class="btn template-btn-1">Instagram</a>
+                <a href="/projects" class="btn template-btn-1">All Project</a>
               </div>
             </div>
 
@@ -181,423 +126,11 @@
         </div>
       </div>
 
-      <!-- Blogspot Section -->
-      <div class="section section-blogspot">
-        <div class="container">
-          <!-- Featured Blog Post -->
-          <div class="blog-post featured">
-            <div class="post-header">
-              <p class="categories"><a href="#">Fashion</a> / <a href="#">lifestyle</a></p>
-
-              <h2 class="post-title">
-                <a href="blog-post.html">Proin vestibulum <i>bibendum</i> turpismetus</a>
-              </h2>
-
-              <ul class="post-meta">
-                <li class="date">jul 14, 2015</li>
-                <li class="author">by <a href="#">Admin</a></li>
-                <li class="comments"><a href="#">Comments (1)</a></li>
-              </ul>
-            </div>
-
-            <div class="post-cover">
-              <a href="post-full-width.html">
-                <img width="1140" height="508" src="img/featured-blog-post-cover.jpg" alt="featured post cover" />
-              </a>
-            </div>
-
-            <div class="post-body">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt molestie neque. Integer laoreet ac nisl vel lobortis. Aliquam erat volutpat. Vivamus enim nibh, maximus ac felis nec, maximus tempor odio. Suspendisse quis tortor vitae lectus ullamcorper porttitor. Suspendisse gravida nunc et mi feugiat, vitae dapibus elit tempus. Nulla nec nisi a nisi facilisis placerat. Mauris laoreet luctus dui, a molesti</p>
-
-              <div class="align-center">
-                <div class="btn-wrapper">
-                  <a href="blog-post.html" class="btn template-btn-2">Read more</a>
-                </div>
-
-                <div class="share-block">
-                  <span class="toggle">Share <i class="icon-share"></i></span>
-                  <div class="share-options">
-                    <ul class="clean-list">
-                      <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a></li>
-                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="main-content">
-              <div class="col-md-16">
-                <!-- Simple posts -->
-                <div class="row">
-                  <div class="col-sm-12">
-                    <div class="blog-post small">
-                      <div class="post-header">
-                        <p class="categories"><a href="#">Fashion</a> / <a href="#">lifestyle</a></p>
-
-                        <h2 class="post-title">
-                          <a href="blog-post.html">Proin vestibulum <i>bibendum</i> turpismetus </a>
-                        </h2>
-
-                        <ul class="post-meta">
-                          <li class="date">jul 14, 2015</li>
-                          <li class="author">by <a href="#">Admin</a></li>
-                          <li class="comments"><a href="#">Comments (1)</a></li>
-                        </ul>
-                      </div>
-
-                      <div class="post-cover">
-                        <a href="blog-post.html">
-                          <img width="367" height="346" src="img/simple-post-cover-5.jpg" alt="simple post cover" />
-                        </a>
-                      </div>
-
-                      <div class="post-body">
-                        <p>Molestie neque. Integer laoreet ac nisl vel lobortis. Aliquam erat volutpat. Vivamus enim nibh...</p>
-
-                        <div class="align-center">
-                          <a href="blog-post.html" class="btn template-btn-2">Read more</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="col-sm-12">
-                    <div class="blog-post small">
-                      <div class="post-header">
-                        <p class="categories"><a href="#">Fashion</a> / <a href="#">lifestyle</a></p>
-
-                        <h2 class="post-title">
-                          <a href="blog-post.html">Nam mollis nunc massa diam nunc at dolor</a>
-                        </h2>
-
-                        <ul class="post-meta">
-                          <li class="date">jul 14, 2015</li>
-                          <li class="author">by <a href="#">Admin</a></li>
-                          <li class="comments"><a href="#">Comments (1)</a></li>
-                        </ul>
-                      </div>
-
-                      <div class="post-cover">
-                        <a href="blog-post.html">
-                          <img width="367" height="346" src="img/simple-post-cover-2.jpg" alt="simple post cover" />
-                        </a>
-                      </div>
-
-                      <div class="post-body">
-                        <p>Molestie neque. Integer laoreet ac nisl vel lobortis. Aliquam erat volutpat. Vivamus enim nibh...</p>
-
-                        <div class="align-center">
-                          <a href="blog-post.html" class="btn template-btn-2">Read more</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              
-                  <div class="col-sm-12">
-                    <div class="blog-post small">
-                      <div class="post-header">
-                        <p class="categories"><a href="#">Fashion</a> / <a href="#">lifestyle</a></p>
-
-                        <h2 class="post-title">
-                          <a href="blog-post.html">Proin vestibulum <i>bibendum</i> turpismetus </a>
-                        </h2>
-
-                        <ul class="post-meta">
-                          <li class="date">jul 14, 2015</li>
-                          <li class="author">by <a href="#">Admin</a></li>
-                          <li class="comments"><a href="#">Comments (1)</a></li>
-                        </ul>
-                      </div>
-
-                      <div class="post-cover">
-                        <a href="blog-post.html">
-                          <img width="367" height="346" src="img/simple-post-cover-3.jpg" alt="simple post cover" />
-                        </a>
-                      </div>
-
-                      <div class="post-body">
-                        <p>Molestie neque. Integer laoreet ac nisl vel lobortis. Aliquam erat volutpat. Vivamus enim nibh...</p>
-
-                        <div class="align-center">
-                          <a href="blog-post.html" class="btn template-btn-2">Read more</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-12">
-                    <div class="blog-post small">
-                      <div class="post-header">
-                        <p class="categories"><a href="#">Fashion</a> / <a href="#">lifestyle</a></p>
-
-                        <h2 class="post-title">
-                          <a href="blog-post.html">Nam mollis nunc massa diam nunc at dolor</a>
-                        </h2>
-
-                        <ul class="post-meta">
-                          <li class="date">jul 14, 2015</li>
-                          <li class="author">by <a href="#">Admin</a></li>
-                          <li class="comments"><a href="#">Comments (1)</a></li>
-                        </ul>
-                      </div>
-
-                      <div class="post-cover">
-                        <a href="blog-post.html">
-                          <img width="367" height="346" src="img/simple-post-cover-4.jpg" alt="simple post cover" />
-                        </a>
-                      </div>
-
-                      <div class="post-body">
-                        <p>Molestie neque. Integer laoreet ac nisl vel lobortis. Aliquam erat volutpat. Vivamus enim nibh...</p>
-
-                        <div class="align-center">
-                          <a href="blog-post.html" class="btn template-btn-2">Read more</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-12">
-                    <div class="blog-post small">
-                      <div class="post-header">
-                        <p class="categories"><a href="#">Fashion</a> / <a href="#">lifestyle</a></p>
-
-                        <h2 class="post-title">
-                          <a href="blog-post.html">Proin vestibulum <i>bibendum</i> turpismetus </a>
-                        </h2>
-
-                        <ul class="post-meta">
-                          <li class="date">jul 14, 2015</li>
-                          <li class="author">by <a href="#">Admin</a></li>
-                          <li class="comments"><a href="#">Comments (1)</a></li>
-                        </ul>
-                      </div>
-
-                      <div class="post-cover">
-                        <a href="blog-post.html">
-                          <img width="367" height="346" src="img/simple-post-cover-7.jpg" alt="simple post cover" />
-                        </a>
-                      </div>
-
-                      <div class="post-body">
-                        <p>Molestie neque. Integer laoreet ac nisl vel lobortis. Aliquam erat volutpat. Vivamus enim nibh...</p>
-
-                        <div class="align-center">
-                          <a href="blog-post.html" class="btn template-btn-2">Read more</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-12">
-                    <div class="blog-post small">
-                      <div class="post-header">
-                        <p class="categories"><a href="#">Fashion</a> / <a href="#">lifestyle</a></p>
-
-                        <h2 class="post-title">
-                          <a href="blog-post.html">Nam mollis nunc massa diam nunc at dolor</a>
-                        </h2>
-
-                        <ul class="post-meta">
-                          <li class="date">jul 14, 2015</li>
-                          <li class="author">by <a href="#">Admin</a></li>
-                          <li class="comments"><a href="#">Comments (1)</a></li>
-                        </ul>
-                      </div>
-
-                      <div class="post-cover">
-                        <a href="blog-post.html">
-                          <img width="367" height="346" src="img/simple-post-cover-6.jpg" alt="simple post cover" />
-                        </a>
-                      </div>
-
-                      <div class="post-body">
-                        <p>Molestie neque. Integer laoreet ac nisl vel lobortis. Aliquam erat volutpat. Vivamus enim nibh...</p>
-
-                        <div class="align-center">
-                          <a href="blog-post.html" class="btn template-btn-2">Read more</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <ul class="page-numbers">
-                  <li><a href="#" class="page-numbers">1</a></li>
-                  <li><span class="page-numbers">2</span></li>
-                  <li><a href="#" class="page-numbers">3</a></li>
-                  <li><a href="#" class="page-numbers">4</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="sidebar">
-              <div class="col-lg-7 col-lg-offset-1 col-md-8">
-                <div class="row isotope-container">
-                  <div class="col-md-24 col-sm-12 col-xs-24 isotope-item">
-                    <div class="widget widget_bio">
-                      <h5 class="widget-title">About me</h5>
-
-                      <img width="318" height="366" src="img/author.jpg" alt="author avatar" />
-
-                      <div class="bio">
-                        <h4 class="name">Author blogger</h4>
-
-                        <ul class="social-block">
-                          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-
-                        <p>Molestie neque. Integer laoreet ac nisl vel lobortis. Aliquam erat volutpat. Vivamus enim nibh...</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-24 col-sm-12 col-xs-24 isotope-item">
-                    <div class="widget widget_categories">
-                      <h5 class="widget-title">Categories</h5>
-
-                      <ul>
-                        <li><a href="#">Nature (2)</a></li>
-                        <li><a href="#">Travel (7)</a></li>
-                        <li><a href="#">Fashion (22)</a></li>
-                        <li><a href="#">Food (48)</a></li>
-                        <li><a href="#">Makeup (118)</a></li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="col-md-24 col-sm-12 col-xs-24 isotope-item">
-                    <div class="widget widget_instagram">
-                      <h5 class="widget-title">Instagram</h5>
-
-                      <div class="instagram-feed" data-instagram-items="6" data-instagram-tag="epilogfeed1"></div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-24 col-sm-12 col-xs-24 isotope-item">
-                    <div class="widget widget_social">
-                      <h5 class="widget-title">Subscribe &amp; Follow</h5>
-
-                      <ul class="social-block">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                      </ul>
-
-                      <div class="subscribe-form-wrapper">
-                        <form class="subscribe-form">
-                          <input type="text" class="form-input" placeholder="E-mail address" />
-                          <button class="form-submit"><i class="icon-arrow-right2"></i></button>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-24 col-sm-12 col-xs-24 isotope-item">
-                    <div class="widget widget_promo">
-                      <a href="blog-post.html">
-                        <img width="320" height="285" src="img/promo-bg.jpg" alt="promo bg">
-
-                        <div class="promo-text">
-                          <h2>Best food</h2>
-                          <h3>$2<span>90</span></h3>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div class="col-md-24 col-sm-12 col-xs-24 isotope-item">
-                    <div class="widget widget_facebook">
-                      <h5 class="widget-title">Find us on facebook</h5>
-
-                      <div class="fb-page" data-href="https://www.facebook.com/teslathemes" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-24 col-sm-12 col-xs-24 isotope-item">
-                    <div class="widget widget_popular">
-                      <h5 class="widget-title">Most popular projects</h5>
-
-                      <ul class="clean-list stories">
-                        <li class="story">
-                          <div class="cover">
-                            <a href="blog-post.html">
-                              <img width="130" height="85" src="img/popular-story-1.jpg" alt="popular story" />
-                            </a>
-                          </div>
-
-                          <div class="story-body">
-                            <h3 class="title"><a href="blog-post.html">Praesent id purus ipsum.</a></h3>
-                            <span class="date">15 jul, 2015</span>
-                          </div>
-                        </li>
-
-                        <li class="story">
-                          <div class="cover">
-                            <a href="blog-post.html">
-                              <img width="130" height="85" src="img/popular-story-1.jpg" alt="popular story" />
-                            </a>
-                          </div>
-
-                          <div class="story-body">
-                            <h3 class="title"><a href="blog-post-2.html">metus finibus auctor</a></h3>
-                            <span class="date">11 jul, 2015</span>
-                          </div>
-                        </li>
-
-                        <li class="story">
-                          <div class="cover">
-                            <a href="blog-post.html">
-                              <img width="130" height="85" src="img/popular-story-3.jpg" alt="popular story" />
-                            </a>
-                          </div>
-
-                          <div class="story-body">
-                            <h3 class="title"><a href="blog-post.html">Donec consequat quam</a></h3>
-                            <span class="date">10 jul, 2015</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="col-md-24 col-sm-12 col-xs-24 isotope-item">
-                    <div class="widget widget_tagcloud">
-                      <h5 class="widget-title">Tag cloud</h5>
-
-                      <div class="tag_cloud">
-                        <a href="#">cook</a>
-                        <a href="#">food</a>
-                        <a href="#">fashion</a>
-                        <a href="#">flowers</a>
-                        <a href="#">book</a>
-                        <a href="#">event</a>
-                        <a href="#">work</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Footer -->
     <footer>
       <div class="widgets">
         <div class="widget widget_instagram_big">
-          <h5 class="widget-title">Let's Create</h5>
+          <h5 class="widget-title">Let's Create </h5>
 
           <div class="instagram-feed instagram-carousel" data-instagram-items="12" data-instagram-tag="epilogfeed2"></div>
         </div>
@@ -618,7 +151,7 @@
 
             <div class="col-xs-8">
               <div class="widget-social-block">
-                <a href="https://www.facebook.com/Lets-Create-254458861653562/?ref=aymt_homepage_panel">
+                <a href="https://www.facebook.com/Lets-Create-254458861653562/">
                   <span><i class="fa fa-facebook"></i><span class="text">Facebook (155)</span></span>
                 </a>
 
@@ -645,7 +178,7 @@
 
       <div class="copy-rights align-center">
         <div class="container">
-          <p>John L. Navarra <a href="https://www.teslathemes.com" target="blank"></a></p>
+          <p>Copyright Epilog. Design by <a href="https://www.teslathemes.com" target="blank">TeslaThemes</a></p>
         </div>
       </div>
     </footer>
@@ -656,11 +189,12 @@
   </div>
 
   <!-- Scripts -->
-  <script src="js/jquery.js"></script>
-  <script src="js/flickity.js"></script>
-  <script src="js/owl.js"></script>
-  <script src="js/imagesloaded.js"></script>
-  <script src="js/isotope.js"></script>
-  <script src="js/options.js"></script>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/flickity.js"></script>
+  <script src="/js/owl.js"></script>
+  <script src="/js/imagesloaded.js"></script>
+  <script src="/js/isotope.js"></script>
+  <script src="/js/options.js"></script>
 </body>
 </html>
+

@@ -1,0 +1,33 @@
+<div class="main-slider">
+  <ul class="items clean-list">
+
+    <li class="item gallery-cell">
+      <img width="840" height="542" src="<%= @project1.project_images.first.url %>" alt="slider item cover" />
+      <div class="slide-components">
+        <h3 class="title slide-component first-row"><a href="/projects/<%= @project1.id %>"><%= @project1.name %></a></h3>
+        <hr class="slide-component second-row" />
+        <a href="/projects/<%= @project1.id %>" class="link slide-component third-row">Read more</a>
+      </div>
+    </li>
+
+    <li class="item gallery-cell">
+      <img width="840" height="542" src="<%= @project2.project_images.first.url %>" alt="slider item cover" />
+      <div class="slide-components">
+        <h3 class="title slide-component first-row"><a href="/projects/<%= @project2.id %>"><%= @project2.name %></a></h3>
+        <hr class="slide-component second-row" />
+        <a href="/projects/<%= @project2.id %>" class="link slide-component third-row">Read more</a>
+      </div>
+    </li>
+
+    <li class="item gallery-cell">
+      <img width="840" height="542" src="<%= @project3.project_images.first.url %>" alt="slider item cover" />
+      <div class="slide-components">
+        <h3 class="title slide-component first-row"><a href="/projects/<%= @project3.id %>"><%= @project3.name %></a></h3>
+        <hr class="slide-component second-row" />
+        <a href="/projects/<%= @project3.id %>" class="link slide-component third-row">Read more</a>
+      </div>
+    </li>
+
+
+  </ul>
+</div>

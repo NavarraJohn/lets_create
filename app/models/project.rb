@@ -12,8 +12,9 @@
 class Project < ApplicationRecord
 
   belongs_to :user
+
   has_many :projects_categories
-  has_many :images
+  has_many :project_images
   has_many :favorite_projects
   has_many :categories, through: :projects_categories
   has_many :users_who_favorited, through: :favorite_projects, class_name: "User"
