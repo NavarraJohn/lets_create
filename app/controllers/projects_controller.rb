@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
     @project_images = ProjectImage.all
-
+    
   end  
 
   def show
@@ -20,6 +20,9 @@ class ProjectsController < ApplicationController
     @images = Image.find_by(id: params[:id])
     @instructions = Instruction.find_by(id: params[:id])
     @users = User.find_by(id: params[:id])
+    if current_user.id != @projects.user_id
+      redirect_to "/"
+    end
 
 
   end  

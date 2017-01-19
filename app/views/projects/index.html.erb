@@ -13,21 +13,22 @@
 <% end %>
  
 
-  
- 
-<% @projects.each do |project| %>
-
-
-    <h2><%= link_to project.name,"/projects/#{project.id}" %></h2>
-
-    <% project.project_images.each do |image|%>    
-      <h2><img src= "<%= image.url %>" /></h2> 
-    <% end %>
+  <div class="post-cover">
+    <a href="blog-post.html">
+      <% @projects.each do |project| %>
+        <h2><%= link_to project.name,"/projects/#{project.id}" %></h2>
+          <% project.project_images.each do |image|%>                           
+            <img src="<%= image.url %>" alt="simple post cover" />
+              
+    </a>
   </div>
 
-<% end %>
+  <div class="post-body">
+                          <p>Molestie neque. Integer laoreet ac nisl vel lobortis. Aliquam erat volutpat. Vivamus enim nibh...</p>
 
-
- 
-
-
+                          <div class="align-center">
+                            <a href="blog-post.html" class="btn template-btn-2">Read more</a>
+                <% end %>
+                <% end %>
+                          </div>
+                          </div>
