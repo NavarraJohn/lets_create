@@ -5,7 +5,7 @@
                   <div class="col-sm-8">
                     <div class="post-cover">
                       <a href="blog-post.html">
-                        <img src="<%= project.project_images.first.url %>" alt="simple post cover" />
+                        <img src="<%= @projects.project_images.first.url %>" alt="simple post cover" />
                       </a>
                     </div>
                   </div>
@@ -15,21 +15,22 @@
                       <p class="categories"><a href="#">Fashion</a> / <a href="#">lifestyle</a></p>
 
                       <h2 class="post-title">
-                        <a href="blog-post.html">Project Name : <i><%= project.name %></i></a>
+                        <a href="blog-post.html">Project Name : <i><%= @projects.name %></i></a>
                       </h2>
 
                       <ul class="post-meta">
-                        <li class="date">Created: <%= project.created_at.to_formatted_s(:long) %></li>
-                        <li class="author">by <a href="#"><%= project.user.first_name%>&nbsp<%= project.user.last_name %></a></li>
+                        <li class="date">Created: <%= @projects.created_at.to_formatted_s(:long) %></li>
+                        <li class="author">by <a href="#"><%= @projects.user.first_name%>&nbsp<%= @projects.user.last_name %></a></li>
                         <li class="comments"><a href="#">Comments (1)</a></li>
                       </ul>
                     </div>
 
                     <div class="post-body">
-                      <p><%= instruction.description
+                      <p><%= @instructions.description
                        %></p>
 
-                      <a href="blog-post.html" class="btn template-btn-2">Read more</a>
+                      <a href=""/projects/#{@projects.id}/edit" class="btn template-btn-2">Edit</a>
+                      <a href="/projects/#{@projects.id}", method: :delete class="btn template-btn-2">Delete</a>
                     </div>
                   </div>
                 </div>
@@ -42,13 +43,7 @@
 
 
 
-<div>
-  <%= link_to "Edit Project", "/projects/#{@projects.id}/edit" %>
-</div>
 
-<div>
-  <%= link_to "Delete Project", "/projects/#{@projects.id}", method: :delete %>
-</div>
 
 
 

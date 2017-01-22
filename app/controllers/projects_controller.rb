@@ -4,10 +4,7 @@ class ProjectsController < ApplicationController
 
   def home
     @projects = Project.all
-    @project1 = Project.find_by(id: 1)
-    @project2 = Project.find_by(id: 2)
-    @project3 = Project.find_by(id: 4)
-    @users = User.all 
+    
   end
 
   def index
@@ -21,7 +18,7 @@ class ProjectsController < ApplicationController
 
     @projects = Project.find_by(id: params[:id])
     #@images = Image.find_by(id: params[:id])
-    #@instructions = Instruction.find_by(id: params[:id])
+    @instructions = Instruction.find_by(id: params[:id])
     #@users = User.find_by(id: params[:id])
     
 

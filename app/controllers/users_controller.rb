@@ -4,7 +4,9 @@ class UsersController < ApplicationController
     render 'new.html.erb'
   end
 
-   
+  def index
+    @users = User.all
+  end  
 
   def create
     user = User.new(
@@ -22,5 +24,7 @@ class UsersController < ApplicationController
     end
   end
 
-
+  def show
+    @users = User.find_by(id: params[:id])
+  end
 end

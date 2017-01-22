@@ -69,7 +69,8 @@
                   <a href=" ">Logged in: <%= @current_user.first_name %></a>
                   <ul>
                     <li><a href="logout">Log Out</a></li>
-                    <li><a href="categories-list.html">My profile</a></li>
+                    <li><a href="users/<%= @current_user.id %>">My profile</a></li>
+                   
                     
                   </ul>
                 </li>
@@ -94,7 +95,7 @@
                   <ul>
                     <li><a href="/projects/new">New Project</a></li>
                     <li><a href="/projects/new">Edit Project</a></li>
-                    
+
                     
                   </ul>
                 </li>
@@ -208,7 +209,7 @@
 
       <div class="copy-rights align-center">
         <div class="container">
-          <p>Copyright Epilog. Design by <a href="https://www.teslathemes.com" target="blank">TeslaThemes</a></p>
+          <p> Design by John Navarra<a href="https://www.teslathemes.com" target="blank"></a></p>
         </div>
       </div>
     </footer>
