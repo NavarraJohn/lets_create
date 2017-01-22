@@ -64,8 +64,20 @@
             <nav>
               <ul>
 
-                <li class="current-menu-item">
+                 <% if @current_user %>
+                <li>
+                  <a href=" ">Logged in: <%= @current_user.first_name %></a>
+                  <ul>
+                    <li><a href="logout">Log Out</a></li>
+                    <li><a href="categories-list.html">My profile</a></li>
+                    
+                  </ul>
+                </li>
+                  <% end %>
+
+                <li>
                   <a href="/">Home</a>
+                  
                 </li>
 
                 <li>
@@ -81,6 +93,8 @@
                   <a href="/projects">Let's Create</a>
                   <ul>
                     <li><a href="/projects/new">New Project</a></li>
+                    <li><a href="/projects/new">Edit Project</a></li>
+                    
                     
                   </ul>
                 </li>
@@ -89,7 +103,7 @@
                 </ul>
 
                 <li>
-                  <a href="/"><% if current_user %><%= @current_user.first_name %> <%= @current_user.last_name %> <% end %></a>
+                  <a href="/"><% if current_user %> <% end %></a>
                   <ul>
                     <% if current_user %>
                       

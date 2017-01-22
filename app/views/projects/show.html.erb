@@ -1,30 +1,40 @@
 
+<div class="blog-post medium">
 
-<div>
-  <h2>
-</div>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="post-cover">
+                      <a href="blog-post.html">
+                        <img src="<%= project.project_images.first.url %>" alt="simple post cover" />
+                      </a>
+                    </div>
+                  </div>
+                 
+                  <div class="col-sm-16">
+                    <div class="post-header">
+                      <p class="categories"><a href="#">Fashion</a> / <a href="#">lifestyle</a></p>
 
+                      <h2 class="post-title">
+                        <a href="blog-post.html">Project Name : <i><%= project.name %></i></a>
+                      </h2>
 
-<div>
-  <h4></h4>
-</div>
+                      <ul class="post-meta">
+                        <li class="date">Created: <%= project.created_at.to_formatted_s(:long) %></li>
+                        <li class="author">by <a href="#"><%= project.user.first_name%>&nbsp<%= project.user.last_name %></a></li>
+                        <li class="comments"><a href="#">Comments (1)</a></li>
+                      </ul>
+                    </div>
 
-<div>
-  <h4>
-  <%= @projects.instructions.first.description %></h4>
-</div>
+                    <div class="post-body">
+                      <p><%= instruction.description
+                       %></p>
 
- 
-
-
-<li class="item gallery-cell">
-            <img src= "<%= @projects.project_images.first.url %>" />
-            <div class="slide-components">
-              <h3 class="title slide-component first-row"><a href="blog-post.html">Project Name: <%=  @projects.name%></h></h3>
-              <hr class="slide-component second-row" />
-              <a href="blog-post.html" class="link slide-component third-row"></a>
-            </div>
-          </li>
+                      <a href="blog-post.html" class="btn template-btn-2">Read more</a>
+                    </div>
+                  </div>
+                </div>
+             
+             </div>
 
 
 

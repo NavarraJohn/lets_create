@@ -6,7 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-192.times do 
-  image = Image.new(instruction_id: rand(1..192))
-  image.save
-end
+
+instructions = Instruction.create(project_id: 1, description: "Bell jars / Starry Lights ")
+
+instructions = Instruction.create(project_id: 2, description: "Lightbulb / Flowers / String ,")
+
+instructions = Instruction.create(project_id: 3, description: "Bicycle Rim / String / Feathers")
+
+instructions = Instruction.create(project_id: 4, description: "Tree Trunk / Rope / Utility Hooks")
