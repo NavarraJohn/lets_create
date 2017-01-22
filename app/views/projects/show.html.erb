@@ -1,19 +1,31 @@
 
 
 <div>
-  <h2>Project Name: <%=  @projects.name%></h>
+  <h2>
 </div>
 
 
 <div>
-  <h4><img src= "<%= @projects.project_images.first.url %>" /></h4>
+  <h4></h4>
 </div>
 
 <div>
-  <h4>Description: <% %><%= @instructions.description %></h4>
+  <h4>
+  <%= @projects.instructions.first.description %></h4>
 </div>
 
  
+
+
+<li class="item gallery-cell">
+            <img src= "<%= @projects.project_images.first.url %>" />
+            <div class="slide-components">
+              <h3 class="title slide-component first-row"><a href="blog-post.html">Project Name: <%=  @projects.name%></h></h3>
+              <hr class="slide-component second-row" />
+              <a href="blog-post.html" class="link slide-component third-row"></a>
+            </div>
+          </li>
+
 
 
 

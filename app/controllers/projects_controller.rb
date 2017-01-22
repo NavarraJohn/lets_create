@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!
 
   def home
+    @projects = Project.all
     @project1 = Project.find_by(id: 1)
     @project2 = Project.find_by(id: 2)
     @project3 = Project.find_by(id: 4)
@@ -11,7 +12,8 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
     @project_images = ProjectImage.all
-    
+    @instructions = Instruction.all
+    @users = User.all
   end  
 
   def show
@@ -20,9 +22,7 @@ class ProjectsController < ApplicationController
     @images = Image.find_by(id: params[:id])
     @instructions = Instruction.find_by(id: params[:id])
     @users = User.find_by(id: params[:id])
-    if current_user.id != @projects.user_id
-      redirect_to "/"
-    end
+    
 
 
   end  
@@ -39,12 +39,11 @@ class ProjectsController < ApplicationController
   def create
     @projects = Project.create(name: params[:name], user_id: current_user.id)
   
+    @project_images = ProjectImage.create(url: params[:url], project_id: @projects.id)
     
-    @images = Image.create(url: params[:url])
-    @images.save
 
-    @instructions = Instruction.create(description: params[:description], step_number: params[:step_number])
-    @instructions.save
+    @instructions = Instruction.create( description: params[:description], step_number: params[:step_number], project_id: @projects.id)
+ 
 
     flash[:success] = "Project has been created!"
 
@@ -54,6 +53,9 @@ class ProjectsController < ApplicationController
 
   def edit
     @projects = Project.find_by(id: params[:id])
+    if current_user.id != @projects.user_id
+      redirect_to "/"
+    end
   end
 
   def update
@@ -70,7 +72,11 @@ class ProjectsController < ApplicationController
     projects = Project.find_by(id: params[:id])
     projects.destroy
 
-    flash[:danger] = "Project has been deleted!" 
+    flash[:danger] = "Project has been deleted!"
+
+    if current_user.id != @projects.user_id
+      redirect_to "/"
+    end 
 
     redirect_to "/projects"
   end

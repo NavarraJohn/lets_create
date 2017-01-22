@@ -129,8 +129,10 @@
 									<div class="col-sm-12">
 										<div class="blog-post small">
 											<div class="post-header">
-												<p class="categories"><a href="#">Fashion</a> / <a href="#">lifestyle</a></p>
 
+														<% @projects.each do |project|%>
+												<p class="categories"><a href="#"><%= project.name %></a> / <a href="#">lifestyle</a></p>
+													<% end %>
 												<h2 class="post-title">
 													<a href="blog-post.html">Proin vestibulum <i>bibendum</i> turpismetus </a>
 												</h2>

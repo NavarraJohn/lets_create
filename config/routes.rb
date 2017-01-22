@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post '/users' => 'users#create'
 
   resources :users
+  resources :project_images
 
 end
 

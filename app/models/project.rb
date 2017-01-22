@@ -12,7 +12,7 @@
 class Project < ApplicationRecord
 
   belongs_to :user
-
+  has_many :instructions
   has_many :projects_categories
   has_many :project_images
   has_many :favorite_projects
