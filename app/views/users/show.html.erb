@@ -1,20 +1,37 @@
-<div class="col-md-24 col-sm-12 col-xs-24 isotope-item">
-                    <div class="widget widget_bio">
-                      <h5 class="widget-title">About me</h5>
+<div class="blog-post medium">
 
-                      <img src="<%= current_user.image %>" alt="author avatar" />
-
-                      <div class="bio">
-                        <h4 class="name">Author blogger</h4>
-
-                        <ul class="social-block">
-                          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-
-                        <p>Molestie neque. Integer laoreet ac nisl vel lobortis. Aliquam erat volutpat. Vivamus enim nibh...</p>
-                      </div>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="post-cover">
+                      <a href="blog-post.html">
+                        <img src="<%= @users.image %>" alt="simple post cover" />
+                      </a>
                     </div>
                   </div>
+                 
+                  <div class="col-sm-16">
+                    <div class="post-header">
+                      <p class="categories"></p>
+
+                      <h2 class="post-title">
+                        <a href="blog-post.html"><i><%= @users.first_name %>&nbsp<%= @users.last_name%></i></a>
+                      </h2>
+
+                      <ul class="post-meta">
+                        <li class="date">Member Since: <%= @users.created_at.to_formatted_s(:long) %></li>
+                        <li class="author">by <a href="#"><%= @users.first_name%>&nbsp<%= @users.last_name %></a></li>
+                        <li class="comments"><a href="#">Friends #</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="post-body">
+                      <p>Bio--------<%= 
+                       %></p>
+
+                      <a href=""/users/#{@users.id}" class="btn template-btn-2">Follow</a>
+                      <a href="/users/#{@users.id}/edit", method: :delete class="btn template-btn-2">Unfollow</a>
+                    </div>
+                  </div>
+                </div>
+             
+             </div>

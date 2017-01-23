@@ -1,0 +1,42 @@
+<% @users.each do |user|  %>
+
+
+<div class="blog-post medium">
+
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="post-cover">
+                      <a href="blog-post.html">
+                        <img src="<%= user.image %>" alt="simple post cover" />
+                      </a>
+                    </div>
+                  </div>
+                 
+                  <div class="col-sm-16">
+                    <div class="post-header">
+                      <p class="categories"></p>
+
+                      <h2 class="post-title">
+                        <a href="blog-post.html"><i><%= user.first_name %>&nbsp<%= user.last_name%></i></a>
+                      </h2>
+
+                      <ul class="post-meta">
+                        <li class="date">Member Since: <%= user.created_at.to_formatted_s(:long) %></li>
+                        <li class="author"> Projects Posted (<a href="#"><%= user.projects.length %>)</a></li>
+                        <li class="comments"><a href="#">Friends (#)</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="post-body">
+                      <p><%= 
+                       %>Bio --------- </p>
+
+                      <a href=""/users/#{@users.id}" class="btn template-btn-2">Follow</a>
+                      <a href="/users/#{@users.id}/edit", method: :delete class="btn template-btn-2">Unfollow</a>
+                    </div>
+                  </div>
+                </div>
+             
+             </div>
+
+                  <% end %>
