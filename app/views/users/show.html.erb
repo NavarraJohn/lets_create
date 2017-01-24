@@ -20,7 +20,14 @@
                       <ul class="post-meta">
                         <li class="date">Member Since: <%= @users.created_at.to_formatted_s(:long) %></li>
                         <li class="author">by <a href="#"><%= @users.first_name%>&nbsp<%= @users.last_name %></a></li>
-                        <li class="comments"><a href="#">Friends #</a></li>
+                        <li class="comments">
+                        <a href="#">Friends
+                     
+                         (<%= current_user.followers.length %>)
+                    
+                        </a>
+                        </li>
+
                       </ul>
                     </div>
 

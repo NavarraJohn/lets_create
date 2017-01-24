@@ -2,7 +2,7 @@
 <table>
 <% @projects.each do |project|%>
 
-<% project.instructions.each do |instruction| %>
+
 
 <div class="blog-post medium">
 
@@ -31,9 +31,10 @@
                     </div>
 
                     <div class="post-body">
+                    <% project.instructions.each do |instruction| %>
                       <p><%= instruction.description
                        %></p>
-
+                        <% end %>
                       <a href="blog-post.html" class="btn template-btn-2">Read more</a>
                     </div>
                   </div>
@@ -42,6 +43,6 @@
              </div>
              <% end %>
           
-          <% end %>
+          
             </table>
           

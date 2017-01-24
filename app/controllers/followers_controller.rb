@@ -32,29 +32,24 @@ class FollowersController < ApplicationController
     puts "follower #{follower} and curr user #{curr}"
     @followers = Follower.create(follower_id: current_user.id,  user_id: params[:user_id])
   
-    redirect_to "/users/#{@current_user.id}"
+    # redirect_to "/users/#{@current_user.id}"
+    redirect_to "/users"
    
 
 
     #@projects = Project.create(name: params[:name], user_id: current_user.id)
   
-    #@project_images = ProjectImage.create(url: params[:url], project_id: @projects.id)
-    
+    #@project_images = ProjectImage.create(url: params[:url], project_id: @projects.id)  
   end
 
   
 
   def destroy
-    follower = Follower.find_by(id: params[:id])
-    follower.destroy
+    follow = Follower.find_by(follower_id: current_user.id, user_id: params[:user_id])
+    follow.destroy
+    redirect_to "/users"
 
-    flash[:danger] = "Project has been deleted!"
-
-    if current_user.id != @followers.user_id
-      redirect_to "/user/#{@current_user.id}"
-    end 
-
-    redirect_to "/projects"
+    # flash[:danger] = "!"
   end
   
 

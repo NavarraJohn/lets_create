@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-instructions = Instruction.create(project_id: 1, description: "Bell jars / Starry Lights ")
+instructions = Instruction.create(project_id: 1, description: "Insert Lights", step_number: 2)
 
-instructions = Instruction.create(project_id: 2, description: "Lightbulb / Flowers / String ,")
+instructions = Instruction.create(project_id: 1, description: "Plug in wall" , step_number: 3)
 
-instructions = Instruction.create(project_id: 3, description: "Bicycle Rim / String / Feathers")
+instructions = Instruction.create(project_id: 1, description: "Close The Jar", step_number: 4)
 
-instructions = Instruction.create(project_id: 4, description: "Tree Trunk / Rope / Utility Hooks")
+instructions = Instruction.create(project_id: 4, description: "Gaze at the Bell Jar", step_number: 5)

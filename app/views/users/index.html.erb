@@ -33,22 +33,29 @@
                          
 
 
-                          <%= form_tag "/followers", method: :post do %>
+                          
                           <div>
+                            
+
+                          </div>
                            
+                          <div>
+                          <% if Follower.find_by(follower_id: current_user.id, user_id: user.id) %>
+                            <%= form_tag "/followers/#{user.id}", method: :delete do %>
                             <%= hidden_field_tag "user_id", user.id %>
+                            <%= submit_tag "unfollow", class:"btn template-btn-2" %>
+                            <% end %>
 
-                          </div>
-                           
-                          <div>
-
+                          <% else %>
+                            <%= form_tag "/followers", method: :post do %>
+                            <%= hidden_field_tag "user_id", user.id %>
                             <%= submit_tag "follow", class:"btn template-btn-2" %>
+                            <% end %>
+                          <% end %>
                           </div>
-                        <% end %>
 
 
-                     
-                    
+
 
                     </div>
                   </div>
