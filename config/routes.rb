@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :project_images
+  resources :followers
 
 end
 

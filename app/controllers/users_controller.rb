@@ -27,4 +27,8 @@ class UsersController < ApplicationController
   def show
     @users = User.find_by(id: params[:id])
   end
+
+  def follower
+    @user = Follower.create(user_id: params[])
+  end  
 end
