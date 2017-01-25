@@ -4,7 +4,7 @@
                 <div class="row">
                   <div class="col-sm-8">
                     <div class="post-cover">
-                      <a href="blog-post.html">
+                      
                         <img src="<%= @projects.project_images.first.url %>" alt="simple post cover" />
                       </a>
                     </div>
@@ -15,21 +15,26 @@
                       <p class="categories"><a href="#">Fashion</a> / <a href="#">lifestyle</a></p>
 
                       <h2 class="post-title">
-                        <a href="blog-post.html">Project Name : <i><%= @projects.name %></i></a>
+                        Project Name : <i><%= @projects.name %></i></a>
                       </h2>
 
                       <ul class="post-meta">
                         <li class="date">Created: <%= @projects.created_at.to_formatted_s(:long) %></li>
-                        <li class="author">by <a href="#"><%= @projects.user.first_name%>&nbsp<%= @projects.user.last_name %></a></li>
+                      <li class="author">by<a href="/users/<%= @projects.user.id%>">
+
+                        <%= @projects.user.first_name%>&nbsp<%= @projects.user.last_name %></a></li>
                         <li class="comments"><a href="#">Comments (1)</a></li>
                       </ul>
                     </div>
 
                     <div class="post-body">
-                      <p><%= @instructions.description
-                       %></p>
+                      <% @projects.instructions.order(step_number: :asc).each do |instruction| %>
+                        <p><%= instruction.step_number %>&nbsp<%= instruction.description %></p>
+                      <% end %>
 
-                      <a href=""/projects/#{@projects.id}/edit" class="btn template-btn-2">Edit</a>
+                      <a href=""/projects/#{@projects.id}/edit" class="btn template-btn-2">
+
+                      Edit</a>
                       <a href="/projects/#{@projects.id}", method: :delete class="btn template-btn-2">Delete</a>
                     </div>
                   </div>

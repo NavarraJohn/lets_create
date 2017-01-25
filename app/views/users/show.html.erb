@@ -3,27 +3,27 @@
                 <div class="row">
                   <div class="col-sm-8">
                     <div class="post-cover">
-                      <a href="blog-post.html">
+                      
                         <img src="<%= @users.image %>" alt="simple post cover" />
                       </a>
                     </div>
                   </div>
-                 
+                
                   <div class="col-sm-16">
                     <div class="post-header">
                       <p class="categories"></p>
 
                       <h2 class="post-title">
-                        <a href="blog-post.html"><i><%= @users.first_name %>&nbsp<%= @users.last_name%></i></a>
+                        <i><%= @users.first_name %>&nbsp<%= @users.last_name%></i></a>
                       </h2>
 
                       <ul class="post-meta">
                         <li class="date">Member Since: <%= @users.created_at.to_formatted_s(:long) %></li>
-                        <li class="author">by <a href="#"><%= @users.first_name%>&nbsp<%= @users.last_name %></a></li>
+                        <li class="author">by&nbsp<%= @users.first_name%>&nbsp<%= @users.last_name %></a></li>
                         <li class="comments">
                         <a href="#">Friends
                      
-                         (<%= current_user.followers.length %>)
+                         (<%= @users.followers.length %>)
                     
                         </a>
                         </li>
@@ -34,8 +34,9 @@
                     <div class="post-body">
                       <p>Bio--------<%= 
                        %></p>
-
-                      <a href=""/users/#{@users.id}" class="btn template-btn-2">Follow</a>
+                      
+                      <a href="/users/#{@users.id}" class="btn template-btn-2"><%%> 
+                      Follow</a>
                       <a href="/users/#{@users.id}/edit", method: :delete class="btn template-btn-2">Unfollow</a>
                     </div>
                   </div>

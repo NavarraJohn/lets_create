@@ -4,7 +4,7 @@
 
 <% @projects.each do |project|%>
 <% project.project_images.each do |image|%>
-<% project.instructions.each do |instruction|%>
+
     <li class="item gallery-cell" >
       <img width="840" height="542" src="<%= image.url %>" alt="slider item cover" />
       <div class="slide-components">
@@ -15,7 +15,7 @@
       </div>
      <% end %> 
   <% end %>
-<% end %>
+
     </li>
 
     
@@ -25,48 +25,7 @@
 
  </ul>
 </div>
-<% @projects.each do |project|%>
-<% project.project_images.each do |image|%>
-<% project.instructions.each do |instruction|%>
-
-<div class="blog-post medium">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <div class="post-cover">
-                      <a href="/projects/<%= project.id %>">
-                        <img src="<%= image.url %>" alt="simple post cover" />
-                      </a>
-                    </div>
-                  </div>
-                 
-                  <div class="col-sm-16">
-                    <div class="post-header">
-                      <p class="categories"><a href="/projects/<%= project.id %>">Fashion</a> / <a href="/projects/<%= project.id %>">lifestyle</a></p>
-
-                      <h2 class="post-title">
-                        <a href="/projects/<%= project.id %>">Project Name : <i><%= project.name %></i></a>
-                      </h2>
-
-                      <ul class="post-meta">
-                        <li class="date"><%= project.created_at.to_formatted_s(:long)%></li>
-                        <li class="author">by <a href="/projects/<%= project.id %>"><%= project.user.first_name %></a>&nbsp<%= project.user.last_name %></li>
-                        <li class="comments"><a href="/projects/<%= project.id %>">Comments (1)</a></li>
-                      </ul>
-                    </div>
-
-                    <div class="post-body">
-                      <p><%= instruction.description %></p>
-
-                      <a href="/projects/<%= project.id %>" class="btn template-btn-2">Read more</a>
-                    </div>
-                  </div>
-                </div>
-              
-          
-          <% end %> 
-          <% end %>
-          <% end %>
-          </div>   
+</div>   
               
  
 

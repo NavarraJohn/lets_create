@@ -6,7 +6,7 @@
                 <div class="row">
                   <div class="col-sm-8">
                     <div class="post-cover">
-                      <a href="blog-post.html">
+                      <a href="/users/<%=user.id%>">
                         <img src="<%= user.image %>" alt="simple post cover" />
                       </a>
                     </div>
@@ -17,13 +17,13 @@
                       <p class="categories"></p>
 
                       <h2 class="post-title">
-                        <a href="blog-post.html"><i><%= user.first_name %>&nbsp<%= user.last_name%></i></a>
+                        <a href="/users/<%=user.id%>"><i><%= user.first_name %>&nbsp<%= user.last_name%></i></a>
                       </h2>
 
                       <ul class="post-meta">
                         <li class="date">Member Since: <%= user.created_at.to_formatted_s(:long) %></li>
                         <li class="author"> Projects Posted (<a href="#"><%= user.projects.length %>)</a></li>
-                        <li class="comments"><a href="#">Friends (#)</a></li>
+                        <li class="comments"><a href="#">Friends (<%= user.followers.length %>)</a></li>
                       </ul>
                     </div>
 
@@ -40,27 +40,30 @@
                           </div>
                            
                           <div>
-                          <% if Follower.find_by(follower_id: current_user.id, user_id: user.id) %>
-                            <%= form_tag "/followers/#{user.id}", method: :delete do %>
-                            <%= hidden_field_tag "user_id", user.id %>
-                            <%= submit_tag "unfollow", class:"btn template-btn-2" %>
-                            <% end %>
-
-                          <% else %>
-                            <%= form_tag "/followers", method: :post do %>
-                            <%= hidden_field_tag "user_id", user.id %>
-                            <%= submit_tag "follow", class:"btn template-btn-2" %>
-                            <% end %>
-                          <% end %>
-                          </div>
 
 
+        <% if current_user != user %>      
+          <% if Follower.find_by(follower_id: current_user.id, user_id: user.id) %>
+            <%= form_tag "/followers/#{user.id}", method: :delete do %>
+              <%= hidden_field_tag "user_id", user.id %>
+              <%= submit_tag "unfollow", class:"btn template-btn-2" %>
+            <% end %>
 
+          <% else %>
+            <%= form_tag "/followers", method: :post do %>
+              <%= hidden_field_tag "user_id", user.id %>
+              <%= submit_tag "follow", class:"btn template-btn-2" %>
+            <% end %>          
+                                    
+          <% end %>
+        <% end %>
 
+                          
+
+                          
+                        </div>
+                      </div>
                     </div>
-                  </div>
                 </div>
-             
              </div>
-
-                  <% end %>
+        <% end %>

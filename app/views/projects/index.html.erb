@@ -9,7 +9,7 @@
                 <div class="row">
                   <div class="col-sm-8">
                     <div class="post-cover">
-                      <a href="blog-post.html">
+                      <a href="/projects/<%= project.id %>">
                         <img src="<%= project.project_images.first.url %>" alt="simple post cover" />
                       </a>
                     </div>
@@ -17,10 +17,10 @@
                  
                   <div class="col-sm-16">
                     <div class="post-header">
-                      <p class="categories"><a href="#">Fashion</a> / <a href="#">lifestyle</a></p>
+                      <p class="categories"><a href="/projects/<%= project.id %>">Fashion</a> / <a href="#">lifestyle</a></p>
 
                       <h2 class="post-title">
-                        <a href="blog-post.html">Project Name : <i><%= project.name %></i></a>
+                        <a href="/projects/<%= project.id %>">Project Name : <i><%= project.name %></i></a>
                       </h2>
 
                       <ul class="post-meta">
@@ -32,10 +32,10 @@
 
                     <div class="post-body">
                     <% project.instructions.each do |instruction| %>
-                      <p><%= instruction.description
+                      <p><%= instruction.step_number %>, &nbsp<%= instruction.description
                        %></p>
                         <% end %>
-                      <a href="blog-post.html" class="btn template-btn-2">Read more</a>
+                      <a href="/projects/<%= project.id %>" class="btn template-btn-2">Read more</a>
                     </div>
                   </div>
                 </div>
