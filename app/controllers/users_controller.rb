@@ -31,5 +31,11 @@ class UsersController < ApplicationController
 
   def follower
     @user = Follower.create(user_id: params[])
-  end  
+  end 
+
+  def friends
+    # @users = User.all
+    # @followers = Follower.all 
+    
+  end 
 end

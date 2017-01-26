@@ -1,48 +1,114 @@
 
-<table>
-<% @projects.each do |project|%>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+    <title>Epilog</title>
+    <meta name="description" content="Here goes description" />
+    <meta name="author" content="author name" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
 
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
+    <!-- Style CSS & Google Fonts -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic%7CMontserrat:400,700" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/icomoon.css" />
+    <link rel="stylesheet" href="css/owl.css" />
+    <link rel="stylesheet" href="css/screen.css" />
+</head>
+<body id="front-page">
+  <!-- Page Wrapper -->
+  <div id="page">
+    <!-- Header -->
+    
+    <!-- Main Content -->
+    <div class="content-wrapper">
+      <!-- Main Slider -->
+      
 
-<div class="blog-post medium">
+      <!-- Categories Promo -->
+      
 
-                <div class="row">
-                  <div class="col-sm-8">
-                    <div class="post-cover">
-                      <a href="/projects/<%= project.id %>">
-                        <img src="<%= project.project_images.first.url %>" alt="simple post cover" />
-                      </a>
-                    </div>
+      <!-- Blogspot Section -->
+      <div class="section section-blogspot">
+        <div class="container">
+          <!-- Featured Blog Post -->
+          <div class="blog-post featured">
+            
+
+           
+            
+          </div>
+<% @projects.each do |project| %>
+
+          <div class="main-content">
+            <!-- Simple posts -->
+            <div class="row">
+              <div class="col-sm-12 col-md-8">
+                <div class="blog-post small">
+                
+                  <div class="post-header">
+                    
+
+                    <h2 class="post-title">
+                      <%= link_to project.name,"/projects/#{project.id}" %> </a>
+                    </h2>
+
+                    <ul class="post-meta">
+                      <li class="date"><%= project.created_at.to_formatted_s(:long) %></li>
+                      <li class="author">by <a href="users/<%= project.user.id%>"><%= project.user.first_name%>&nbsp<%= project.user.last_name %></a></li>
+                      
+                    </ul>
                   </div>
-                 
-                  <div class="col-sm-16">
-                    <div class="post-header">
-                      <p class="categories"><a href="/projects/<%= project.id %>">Fashion</a> / <a href="#">lifestyle</a></p>
 
-                      <h2 class="post-title">
-                        <a href="/projects/<%= project.id %>">Project Name : <i><%= project.name %></i></a>
-                      </h2>
+                  <div class="post-cover">
+                    <a href="/projects/<%= project.id%>" %>
+                      <img src="<%= project.project_images.first.url %>" alt="simple post cover" />
+                    </a>
+                  </div>
 
-                      <ul class="post-meta">
-                        <li class="date">Created: <%= project.created_at.to_formatted_s(:long) %></li>
-                        <li class="author">by <a href="#"><%= project.user.first_name%>&nbsp<%= project.user.last_name %></a></li>
-                        <li class="comments"><a href="#">Comments (1)</a></li>
-                      </ul>
-                    </div>
+                  <div class="post-body">
+                    <p></p>
 
-                    <div class="post-body">
-                    <% project.instructions.each do |instruction| %>
-                      <p><%= instruction.step_number %>, &nbsp<%= instruction.description
-                       %></p>
-                        <% end %>
-                      <a href="/projects/<%= project.id %>" class="btn template-btn-2">Read more</a>
+                    <div class="align-center">
+                      <a href="/projects/<%= project.id%>" class="btn template-btn-2">Read more</a>
                     </div>
                   </div>
                 </div>
-             
-             </div>
+              </div>
+
+            
              <% end %>
           
-          
-            </table>
-          
+           
+
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    
+
+    
+
+    <a class="back-to-top-btn" href="#">
+      <i class="fa fa-angle-up btn template-btn-2"></i>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/jquery.js"></script>
+  <script src="js/flickity.js"></script>
+  <script src="js/owl.js"></script>
+  <script src="js/imagesloaded.js"></script>
+  <script src="js/isotope.js"></script>
+  <script src="js/options.js"></script>
+</body>
+</html>

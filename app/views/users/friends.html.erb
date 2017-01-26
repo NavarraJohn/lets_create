@@ -1,0 +1,58 @@
+
+<% current_user.followers.each do |follower| %>
+   
+
+
+
+             
+
+
+<div class="blog-post medium">
+
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="post-cover">
+                      
+                       <img src="<%= follower.image %>" alt="simple post cover" />
+                      </a>
+                    </div>
+                  </div>
+                
+                  <div class="col-sm-16">
+                    <div class="post-header">
+                      <p class="categories"></p>
+
+                      <h2 class="post-title">
+                        <i></i></a>
+                      </h2>
+
+                      <ul class="post-meta">
+                        
+                        <li class="author"><%= follower.first_name%>&nbsp<%= follower.last_name %></a></li>
+                        <li class="date">Member Since: <%= follower.created_at.to_formatted_s(:long) %></li>
+                        <li class="comments">
+                        <a href="#">
+
+
+
+                      <ul class="post-meta">
+                        )
+                    
+                        </a>
+                        </li>
+
+                      </ul>
+                    </div>
+
+                    <div class="post-body">
+                      <p><%= 
+                       %></p>
+                      
+                      
+                    </div>
+                  </div>
+                </div>
+             
+             </div>
+
+             <% end %>

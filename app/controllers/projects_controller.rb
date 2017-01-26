@@ -38,6 +38,8 @@ class ProjectsController < ApplicationController
     @projects = Project.create(name: params[:name], user_id: current_user.id)
   
     @project_images = ProjectImage.create(url: params[:url], project_id: @projects.id)
+
+
     
 
     @instructions = Instruction.create( description: params[:description], step_number: params[:step_number], project_id: @projects.id)
@@ -72,7 +74,7 @@ class ProjectsController < ApplicationController
 
     flash[:danger] = "Project has been deleted!"
 
-    if current_user.id != @projects.user_id
+    if current_user.id != projects.user_id
       redirect_to "/"
     end 
 

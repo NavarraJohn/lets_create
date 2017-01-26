@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
+  get '/users/friends' => 'users#friends'
+
   resources :users
   resources :project_images
   resources :followers

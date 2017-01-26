@@ -32,10 +32,11 @@
                         <p><%= instruction.step_number %>&nbsp<%= instruction.description %></p>
                       <% end %>
 
-                      <a href=""/projects/#{@projects.id}/edit" class="btn template-btn-2">
+                      <a href=""/projects/#{@projects.id}/edit" class="btn template-btn-2" >
 
                       Edit</a>
-                      <a href="/projects/#{@projects.id}", method: :delete class="btn template-btn-2">Delete</a>
+                      </a>
+                         <%= link_to "Delete Project", "/projects/#{@projects.id}" , method: :delete %> 
                     </div>
                   </div>
                 </div>

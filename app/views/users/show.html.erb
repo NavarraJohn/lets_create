@@ -32,12 +32,27 @@
                     </div>
 
                     <div class="post-body">
-                      <p>Bio--------<%= 
+                      <p><%= 
                        %></p>
                       
-                      <a href="/users/#{@users.id}" class="btn template-btn-2"><%%> 
-                      Follow</a>
-                      <a href="/users/#{@users.id}/edit", method: :delete class="btn template-btn-2">Unfollow</a>
+
+                     
+        <% if current_user != @users %>      
+          <% if Follower.find_by(follower_id: current_user.id, user_id: @users.id) %>
+            <%= form_tag "/followers/#{user.id}", method: :delete do %>
+              <%= hidden_field_tag "user_id", @users.id %>
+              <%= submit_tag "unfollow", class:"btn template-btn-2" %>
+            <% end %>
+
+          <% else %>
+            <%= form_tag "/followers", method: :post do %>
+              <%= hidden_field_tag "user_id", @users.id %>
+              <%= submit_tag "follow", class:"btn template-btn-2" %>
+            <% end %>          
+                                    
+          <% end %>
+        <% end %>
+   
                     </div>
                   </div>
                 </div>
