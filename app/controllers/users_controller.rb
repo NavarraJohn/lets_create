@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   def show
     @users = User.find_by(id: params[:id])
     @followers = Follower.all
+    @projects = Project.find_by(id: params[:id])
   end
 
   def follower

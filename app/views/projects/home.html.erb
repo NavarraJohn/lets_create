@@ -1,11 +1,11 @@
-<div class="main-slider">
+<div class="projects main-slider">
   <ul class="items clean-list">
 
 
 <% @projects.each do |project|%>
 <% project.project_images.each do |image|%>
 
-    <li class="item gallery-cell" >
+    <li class="projects item gallery-cell" >
       <img width="840" height="542" src="<%= image.url %>" alt="slider item cover" />
       <div class="slide-components">
         <h3 class="title slide-component first-row"><a href="/projects/<%= project.id %>"><%= project.name %></a></h3>
@@ -16,7 +16,7 @@
      <% end %> 
   <% end %>
 
-    </li>
+ 
 
     
       </div>
@@ -24,8 +24,6 @@
    
 
  </ul>
-</div>
-</div>   
-              
+      
  
 
